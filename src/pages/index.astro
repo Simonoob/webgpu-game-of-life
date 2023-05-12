@@ -65,6 +65,8 @@
 
 	if (!navigator.gpu) {
 		alert('WebGPU not supported')
+		const h1 = document.querySelector('h1')
+		h1.textContent = 'WebGPU not supported :('
 		throw new Error('WebGPU not supported')
 	}
 
