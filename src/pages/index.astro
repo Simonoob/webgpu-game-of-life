@@ -77,7 +77,8 @@
 	const adapter = await navigator.gpu.requestAdapter()
 	if (!adapter) {
 		const h1 = document.querySelector('h1')
-		h1.textContent = 'Adapter not found :('
+		h1.textContent =
+			'Adapter not found - your browser is not yet compatible with WebGPU :('
 		throw new Error('Adapter not found')
 	}
 
