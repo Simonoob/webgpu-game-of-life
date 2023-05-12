@@ -603,6 +603,11 @@
   resolved "https://registry.yarnpkg.com/@vscode/l10n/-/l10n-0.0.13.tgz#f51ff130b8c98f189476c5f812d214b8efb09590"
   integrity sha512-A3uY356uOU9nGa+TQIT/i3ziWUgJjVMUrGGXSrtRiTwklyCFjGVWIOHoEIHbJpiyhDkJd9kvIWUOfXK1IkK8XQ==
 
+"@webgpu/types@^0.1.32":
+  version "0.1.32"
+  resolved "https://registry.yarnpkg.com/@webgpu/types/-/types-0.1.32.tgz#098ba131c16cc59406b6721f612238130b58846c"
+  integrity sha512-H6JRAvRonWxqREjxXMZgQmdgIFPe6mykLgdrHY7EQE7YihMKd/SjtSGilUmMKECVdUMg2IQB9vzaXDiTj1AxZg==
+
 acorn@^8.8.2:
   version "8.8.2"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.8.2.tgz#1b2f25db02af965399b9776b0c2c391276d37c4a"
