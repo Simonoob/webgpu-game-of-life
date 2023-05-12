@@ -58,13 +58,17 @@
 		h1.textContent = 'Canvas not found'
 		throw new Error('Canvas not found')
 	}
-
 	const resizeCanvas = () => {
 		const minSide = Math.min(window.innerWidth, window.innerHeight) * 0.99
-		canvas.width = minSide
-		canvas.height = minSide
+		const processedMinSide =
+			minSide * (window.devicePixelRatio >= 2 ? 2 : 1)
+		canvas.width = processedMinSide
+		canvas.height = processedMinSide
+		canvas.style.width = `${minSide}px`
+		canvas.style.height = `${minSide}px`
 	}
 	resizeCanvas()
+	const GRID_SIZE = Math.floor(Math.min(canvas.width, canvas.height) / 4)
 	window.addEventListener('resize', resizeCanvas)
 
 	if (!navigator.gpu) {
@@ -233,7 +237,6 @@
 		},
 	})
 
-	const GRID_SIZE = 164
 	// create a uniform buffer to represent the grid
 	const uniformArray = new Float32Array([GRID_SIZE, GRID_SIZE])
 	const uniformBuffer = device.createBuffer({
@@ -264,7 +267,7 @@
 
 	// Randomize the starting state of the grid
 	for (let i = 0; i < cellStateArray.length; ++i) {
-		cellStateArray[i] = Math.random() > 0.6 ? 1 : 0
+		cellStateArray[i] = Math.random() > 0.8 ? 1 : 0
 	}
 	device.queue.writeBuffer(cellStateStorage[0], 0, cellStateArray)
 
