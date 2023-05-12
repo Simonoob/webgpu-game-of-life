@@ -55,7 +55,7 @@
 	const canvas = document.querySelector('canvas')
 	if (!canvas) {
 		const h1 = document.querySelector('h1')
-		h1.textContent = 'Canvas not found :('
+		h1.textContent = 'Canvas not found'
 		throw new Error('Canvas not found')
 	}
 
@@ -68,9 +68,8 @@
 	window.addEventListener('resize', resizeCanvas)
 
 	if (!navigator.gpu) {
-		alert('WebGPU not supported')
 		const h1 = document.querySelector('h1')
-		h1.textContent = 'WebGPU not supported :('
+		h1.textContent = 'your browser is not yet compatible with WebGPU'
 		throw new Error('WebGPU not supported')
 	}
 
@@ -78,7 +77,7 @@
 	if (!adapter) {
 		const h1 = document.querySelector('h1')
 		h1.textContent =
-			'Adapter not found - your browser is not yet compatible with WebGPU :('
+			'Adapter not found - your browser is not yet compatible with WebGPU'
 		throw new Error('Adapter not found')
 	}
 
