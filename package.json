@@ -5,13 +5,20 @@
   "packageManager": "yarn@1.22.22",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "preview": "astro build && wrangler dev",
+    "astro": "astro",
+    "deploy": "astro build && wrangler deploy",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
     "@webgpu/types": "^0.1.32",
-    "astro": "^2.4.1"
+    "@astrojs/cloudflare": "^12.6.4",
+    "astro": "^5.13.2",
+    "sharp": "^0.34.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "wrangler": "^4.32.0"
   }
 }
